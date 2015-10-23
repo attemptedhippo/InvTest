@@ -19,12 +19,9 @@ int main() {
 	inventory.add(unique_ptr<item>(ITEM_ILEGS(1)));
 
 	cout << "In store:\n";
-	for (int i = 0; i < storeInv.maxItem; i++) {
-		if (storeInv.get(i) != nullptr) {
+	for (auto &i : (storeInv.begin())) { // wat do?
+		if (storeInv.get(i) != nullptr) {//I know the code in the loop is wrong
 			cout << storeInv.get(i)->getQuant() << "x " << storeInv.get(i)->getName() << " : $" << storeInv.get(i)->getPrice() << endl;
-		}
-		else {
-			//cout << "Item number " << i << " cannot be found!\n";
 		}
 	}
 	
@@ -32,9 +29,6 @@ int main() {
 	for (int i = 0; i < inventory.maxItem; i++) {
 		if (inventory.get(i) != nullptr) {
 			cout << inventory.get(i)->getQuant() << "x " << inventory.get(i)->getName() << " : $" << inventory.get(i)->getPrice() << endl;
-		}
-		else {
-			//cout << "Item number " << i << " cannot be found!\n";
 		}
 	}
 	cin.get();

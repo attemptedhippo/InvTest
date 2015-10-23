@@ -26,13 +26,16 @@ public:
 	}
 
 	item* get(int _itemID) {
-
 		for (std::list<std::unique_ptr<item>>::iterator it = inventory.begin(); it != inventory.end(); ++it) {
 			if (it->get()->getNum() == _itemID) {
 				return it->get();
 			}
 		}
 		return nullptr;
+	}
+
+	std::list<std::unique_ptr<item>>::iterator begin() {
+		return inventory.begin();
 	}
 
 	unsigned int size() {
