@@ -1,11 +1,9 @@
 #pragma once
 #include <string>
 
-using namespace std;
-
 class item {
 private:
-	string name;
+	std::string name;
 	int num;
 	int qty;
 	int price;
@@ -20,11 +18,11 @@ public:
 		price(_item.getPrice()) {
 	}
 
-	item(string _name, int _num, int _qty, int _price) :
+	item(std::string _name, int _num, int _qty, int _price) :
 		name(_name), num(_num), qty(_qty), price(_price) {
 	}
 
-	string getName() {
+	std::string getName() {
 		return name;
 	}
 
